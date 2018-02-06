@@ -1,4 +1,6 @@
 package game;
+import domain.DataBase;
+
 import java.util.Scanner;
 public class Menu {
     private static void show(){
@@ -24,9 +26,11 @@ public class Menu {
 
 
     public static void main(){
+        DataBase.open();
         do{
             show();
         }while(choose());
+        DataBase.close();
 
 
 

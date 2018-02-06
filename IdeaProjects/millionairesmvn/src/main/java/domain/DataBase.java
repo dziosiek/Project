@@ -24,7 +24,7 @@ public class DataBase {
         entityManagerFactory.close();
     }
     public static void fill(String question,String a, String b, String c, String d, String correct,int points){
-        open();
+//        open();
         Questions q = new Questions();
         q.setQuestion(question);
         q.setAnswerA(a);
@@ -36,30 +36,37 @@ public class DataBase {
         entityManager.getTransaction().begin();
         entityManager.persist(q);
         entityManager.getTransaction().commit();
-        close();
+//        close();
 
     }
     public static Questions load(int id){
-        open();
-        Questions q = entityManager.find(Questions.class,id);
-        close();
-        return q;
+
+        try {
+            Questions q = entityManager.find(Questions.class, id);
+            return q;
+        }catch (NullPointerException e){
+            System.out.println(e);
+
+            return null;
+        }
+
+
     }
     public static boolean delete(int id){
 
         try{
-            open();
+//            open();
             Questions q= entityManager.find(Questions.class, id);
             entityManager.getTransaction().begin();
             entityManager.remove(q);
             entityManager.getTransaction().commit();
-            close();
+//            close();
 
             return true;
 
         }
         catch (IllegalArgumentException e){
-            close();
+//            close();
             return false;
         }
 
