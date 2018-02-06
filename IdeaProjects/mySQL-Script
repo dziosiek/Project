@@ -1,0 +1,17 @@
+DROP SCHEMA IF EXISTS `Millionaires`;
+CREATE SCHEMA `Millionaires` ;
+USE `Millionaires`;
+DROP TABLE IF EXISTS `Questions`;
+CREATE TABLE `Questions` (
+	`id` int(3) NOT NULL AUTO_INCREMENT,
+	`question` varchar(100) NOT NULL ,
+	`answerA` varchar(100) NOT NULL ,
+	`answerB` varchar(100) NOT NULL ,
+	`answerC` varchar(100) NOT NULL ,
+	`answerD` varchar(100) NOT NULL ,
+	`correctAnswer` varchar(100) NOT NULL ,
+	`points` int(5) NOT NULL ,
+	PRIMARY KEY (`id`)
+);
+
+
