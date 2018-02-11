@@ -66,9 +66,19 @@ public class DataBase {
 
         }
         catch (IllegalArgumentException e){
+            System.out.println(e);
 //            close();
             return false;
         }
+        catch(IllegalStateException e){
+            System.out.println(e);
+            entityManager.getTransaction().commit();
+
+            return false;
+
+        }
+
+
 
     }
     public static void count(){

@@ -17,7 +17,7 @@ public class Game {
         while(!wrong_answer){
             do {
 
-                q = DataBase.load(rand.nextInt(20));
+                q = DataBase.load(rand.nextInt(616));
 
             } while (q == null);
 
@@ -26,6 +26,7 @@ public class Game {
             System.out.println("odpowiedz b)" + q.getAnswerB());
             System.out.println("odpowiedz c)" + q.getAnswerC());
             System.out.println("odpowiedz d)" + q.getAnswerD());
+            System.out.println("ilosc punktow za pytanie:"+q.getPoints());
             Scanner r = new Scanner(System.in);
             System.out.print("Podaj odpowiedź:");
             String answer;
@@ -38,9 +39,7 @@ public class Game {
             } else wrong_answer =true;
             System.out.println();
         }
-
-
-
+        System.out.println("zdobyles "+total_points+" punktow.");
 
     }
 

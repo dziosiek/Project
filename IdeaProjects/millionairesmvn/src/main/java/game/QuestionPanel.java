@@ -12,6 +12,7 @@ public class QuestionPanel {
 
     private static boolean choose() {
         Scanner r = new Scanner(System.in);
+        System.out.print("wybierz:");
         int c = r.nextInt();
         switch (c) {
             case 1: {
