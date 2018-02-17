@@ -4,12 +4,24 @@ import com.mysql.fabric.xmlrpc.base.Data;
 import domain.DataBase;
 
 import java.util.Scanner;
-
+/**
+*QuestionPanel class
+* @author Adam Wlosek
+*/
 public class QuestionPanel {
+    /**
+    *printing Question Panel
+*/
     private static void show() {
         System.out.println("1 - add question\n2 - delete question\n3 - exit");
     }
-
+    /**
+    *
+    * run add() if selected 1
+    * run delete() if selected 2
+    * return false if selected 3
+    * @return return false if selected 3, otherwise return true
+    * */
     private static boolean choose() {
         Scanner r = new Scanner(System.in);
         System.out.print("wybierz:");
@@ -32,6 +44,9 @@ public class QuestionPanel {
         return true;
 
     }
+    /**
+    *Function adding question
+*/
     public static void add(){
         Scanner r = new Scanner(System.in);
         System.out.print("Podaj tresc:");
@@ -52,13 +67,18 @@ public class QuestionPanel {
 
 
     }
+    /**
+    *Function deleting question
+*/
     public static void delete(){
         Scanner r = new Scanner(System.in);
         DataBase.delete(r.nextInt());
 
 
     }
-
+/**
+*function run choose() method
+*/
     public static void main() {
         do {
             show();

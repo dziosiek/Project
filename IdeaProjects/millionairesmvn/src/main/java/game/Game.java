@@ -5,10 +5,17 @@ import domain.Questions;
 
 import java.util.Random;
 import java.util.Scanner;
+/**
+*@author Adam Wlosek
+* Game Class
+*/
 
 public class Game {
     static Random rand = new Random();
-
+/**
+* Function includes game engine. It generates question and printing it on the screen. User
+* must choose answer.
+*/
     public static void run(){
         int number_of_question = 1;
         int total_points = 0;
