@@ -17,14 +17,15 @@ public class Game {
 * must choose answer.
 */
     public static void run(){
+        int generator = 0;
         int number_of_question = 1;
         int total_points = 0;
         Questions q;
         boolean wrong_answer = false;
         while(!wrong_answer){
             do {
-
-                q = DataBase.load(rand.nextInt(616));
+                generator=(generator+rand.nextInt(20))%616;
+                q = DataBase.load(generator);
 
             } while (q == null);
 

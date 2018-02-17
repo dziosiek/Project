@@ -17,9 +17,5 @@ public class DataBaseTest  {
         DataBase.close();
 
     }
-    @Test(expected = ArithmeticException.class)
-    public void testDivisionWithException() {
-        int i = 1 / 0;
-    }
 
 }

@@ -23,17 +23,22 @@ public class Menu {
     private static boolean choose(){
         Scanner r = new Scanner(System.in);
         System.out.print("wybierz:");
+        try{
         int c = r.nextInt();
         switch (c){
             case 1:{
-                System.out.println("1");Game.run();break;}
+                Game.run();break;}
             case 2:{
-                System.out.println("2");break;}
+                break;}
             case 3:{
                 QuestionPanel.main();break;
             }
             case 4:{
-                System.out.println("3");return false;}
+                return false;}
+        }
+        }
+        catch(java.util.InputMismatchException e){
+            System.out.println("Invalid character");
         }
         return true;
 

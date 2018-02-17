@@ -25,6 +25,7 @@ public class QuestionPanel {
     private static boolean choose() {
         Scanner r = new Scanner(System.in);
         System.out.print("wybierz:");
+        try{
         int c = r.nextInt();
         switch (c) {
             case 1: {
@@ -37,9 +38,12 @@ public class QuestionPanel {
             }
 
             case 3: {
-                System.out.println("3");
                 return false;
             }
+        }
+        }
+        catch(java.util.InputMismatchException e){
+            System.out.println("Invalid character");
         }
         return true;
 
